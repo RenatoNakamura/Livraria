@@ -2,7 +2,7 @@ app.factory("livroService", livroService);
 
 function livroService($http){
     var produtos = [];
-    var url = 'http://localhost:50030/livro';
+    var url = 'http://localhost:60660/livro';
     function buscarLivros(){
         return $http.get(url);
     } 
