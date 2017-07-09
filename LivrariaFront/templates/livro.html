@@ -1,0 +1,45 @@
+<div>
+    <h2>Livros cadastrados</h2>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="input-group">
+        <span class="input-group-btn">            
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>              
+              Pesquisar
+            </button>
+        </span>
+        <input type="text" class="form-control" ng-model="model" placeholder="Pesquisar...">
+    </div>
+    </div>
+     <div class="col-md-6 text-right">
+        <a class="btn btn-success" href="#/livro/cadastrar" role="button">Adicionar novo</a>
+    </div>
+</div>
+<br />
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Qtde</th>
+        <th>Valor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="livro in listaDeLivros | filter:model">
+        <td>{{livro.titulo}}</td>
+        <td>{{livro.autor}}</td>
+        <td>{{livro.quantidade}}</td>
+        <td>{{livro.valor}}</td>
+        <td>
+          <a class="btn btn-info" href="#/livro/{{livro.id}}/editar" role="button">Editar</a>
+          <a class="btn btn-danger" href="javascript:void(0);" ng-click="remover(livro.id)" role="button">Remover</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
